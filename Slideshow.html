@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slideshow Example</title>
+  <link rel="stylesheet" href="Style.css">
+  <style>
+   /* CSS styles for the slideshow container */
+    .slideshow-container {
+      max-width: 500px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* CSS styles for the slideshow images */
+    .slideshow-container img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* CSS styles for the slideshow navigation dots */
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .active {
+      background-color: #717171;
+    }
+      /* CSS styles for the arrow buttons */
+      .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+    }
+
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+    <h2>Scenery of Japan Slideshow</h2>
+<br>
+
+<h1>
+		Micspett@uat.edu
+	
+<br>
+		University of Advancing Technology
+<br>
+		CSC256 Designing Website Interfaces I 
+</h1>
+<br>
+<h2>
+    These are some of my personal favorite sceneries of Japan, please go through the slides and enjoy the view!
+</h2>  
+
+    <br>
+  <div class="slideshow-container">
+    <img class="slideshow-img" src="Kami.jpg">
+    <img class="slideshow-img" src="Garden.jpg">
+    <img class="slideshow-img" src="Higu.jpg">
+    <img class="slideshow-img" src="Lucky.jpg">
+    <div class="arrow arrow-left" onclick="previousSlide()">&#10094;</div>
+    <div class="arrow arrow-right" onclick="nextSlide()">&#10095;</div>
+  </div>
+
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+<br>
+<br>
+<br>
+<br>
+  <script>
+    // Using Inline script functionality here to make it cleaner
+    //Script for slideshow
+    var slideIndex = 0;
+    var slides = document.getElementsByClassName("slideshow-img");
+    var dots = document.getElementsByClassName("dot");
+
+    function showSlide(index) {
+      // Removes Active class from dots and hides inactive slides
+      for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        dots[i].classList.remove("active");
+      }
+
+      // Shows the active selected slide and active class to the dots
+      slides[index].style.display = "block";
+      dots[index].classList.add("active");
+    }
+
+    function nextSlide() {
+      slideIndex++;
+      if (slideIndex >= slides.length) {
+        slideIndex = 0;
+      }
+      showSlide(slideIndex);
+    }
+
+    function previousSlide() {
+      slideIndex--;
+      if (slideIndex < 0) {
+        slideIndex = slides.length - 1;
+      }
+      showSlide(slideIndex);
+    }
+
+    //event listeners to the nav dots
+    for (var i = 0; i < dots.length; i++) {
+      dots[i].addEventListener("click", function() {
+        var dotIndex = Array.prototype.indexOf.call(dots, this);
+        showSlide(dotIndex);
+      });
+    }
+    // Initially show the first slide
+    showSlide(slideIndex);
+  </script>
+</body>
+</html>

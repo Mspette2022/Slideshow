@@ -1,0 +1,24 @@
+ body {
+		background-image: url("Castle.jpg");
+		background-size:cover;
+		margin:auto;
+  		background-color: hsl(0, 0%, 100%);
+  		color: hsl(312, 76%, 67%);
+  		background-repeat:no-repeat;
+        background-position: center;	
+		}
+		h1 {
+			font-family: "Caviar Dreams", "PT Sans", Calibri, Tahoma, sans-serif;
+			text-align:center;
+		}
+
+    h2 {
+			font-family: "Caviar Dreams", "PT Sans", Calibri, Tahoma, sans-serif;
+			text-align:center;
+      font-size:70px;
+		}
+		p { 
+			font-family:'Caviar Dreams' ;
+			text-align:center;
+		}
+		@import url('https://www.dafont.com/caviar-dreams.font');
